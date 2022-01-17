@@ -1,5 +1,5 @@
 require('esbuild').build({
-  entryPoints: ['app.js'],
+  entryPoints: ['./src/index.js'],
   bundle: true,
   outfile: 'out.js',
   loader: {
@@ -17,5 +17,5 @@ require('esbuild').build({
     },
   },
 }).then(result => {
-    console.log('watching...', result)
+    console.log('watching...')
 }).catch(() => process.exit(1))
