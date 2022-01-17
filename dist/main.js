@@ -20426,7 +20426,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/App.js
   var import_react = __toESM(require_react());
   var App = () => {
-    return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h1", null, "Jonathan"));
+    return /* @__PURE__ */ import_react.default.createElement("div", {
+      className: "main"
+    }, /* @__PURE__ */ import_react.default.createElement("header", null, /* @__PURE__ */ import_react.default.createElement("h1", null, "Jonathan")));
   };
   var App_default = App;
 
@@ -20483,4 +20485,4 @@ object-assign
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=out.js.map
+//# sourceMappingURL=main.js.map

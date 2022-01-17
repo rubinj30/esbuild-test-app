@@ -1,10 +1,13 @@
+// const cssModulesPlugin = require("esbuild-css-modules-plugin");
+
 require('esbuild').build({
   entryPoints: ['./src/index.js'],
   bundle: true,
-  outfile: 'out.js',
+  outfile: 'dist/main.js',
   loader: {
     '.js': 'jsx'
   },
+  // plugins: [cssModulesPlugin()],
   // will want to remove for production builds
   sourcemap: true,
   // TODO: create separate prod and dev build files

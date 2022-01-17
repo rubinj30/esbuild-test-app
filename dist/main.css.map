@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/App.css"],
+  "sourcesContent": ["body {\n    font-family: 'Courier New', monospace;\n    font-size: 16px;\n    letter-spacing: 4px;\n    font-weight: 400;\n    line-height: 1.5;\n    color: #333;\n    background-color: #fff;\n}\n\n.main {\n    width: 100%;\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 0 15px;\n    background: 'red';\n}"],
+  "mappings": ";AAAA;AACI;AACA;AACA;AACA;AACA;AACA;AACA;AAAA;AAGJ;AACI;AACA;AACA;AACA;AACA;AAAA;",
+  "names": []
+}
