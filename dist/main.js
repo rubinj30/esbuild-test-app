@@ -2440,11 +2440,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React3 = require_react();
+          var React4 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2476,7 +2476,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React3) {
+          if (!React4) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3692,7 +3692,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React3.Children.forEach(children, function(child) {
+            React4.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3703,7 +3703,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React3.Children.forEach(props.children, function(child) {
+                React4.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10896,7 +10896,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React3.Component().refs;
+          var emptyRefsObject = new React4.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -20420,20 +20420,56 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // src/index.js
-  var React2 = __toESM(require_react());
+  var React3 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // src/App.js
+  var import_react2 = __toESM(require_react());
+
+  // src/Nav/Nav.js
   var import_react = __toESM(require_react());
+  var Nav = () => {
+    return /* @__PURE__ */ import_react.default.createElement("nav", {
+      className: "navbar"
+    }, /* @__PURE__ */ import_react.default.createElement("ul", {
+      className: "navbar-items"
+    }, /* @__PURE__ */ import_react.default.createElement("li", {
+      className: "navbar-item"
+    }, "Home"), /* @__PURE__ */ import_react.default.createElement("li", {
+      className: "navbar-item"
+    }, "Contact"), /* @__PURE__ */ import_react.default.createElement("li", {
+      className: "navbar-item has-dropdown"
+    }, /* @__PURE__ */ import_react.default.createElement("a", {
+      href: "#"
+    }, "Theme"), /* @__PURE__ */ import_react.default.createElement("ul", {
+      className: "dropdown"
+    }, /* @__PURE__ */ import_react.default.createElement("li", {
+      className: "dropdown-item"
+    }, /* @__PURE__ */ import_react.default.createElement("a", {
+      id: "dark",
+      href: "#"
+    }, "dark")), /* @__PURE__ */ import_react.default.createElement("li", {
+      className: "dropdown-item"
+    }, /* @__PURE__ */ import_react.default.createElement("a", {
+      id: "light",
+      href: "#"
+    }, "light"))))));
+  };
+  var Nav_default = Nav;
+
+  // src/App.js
   var App = () => {
-    return /* @__PURE__ */ import_react.default.createElement("div", {
-      className: "main"
-    }, /* @__PURE__ */ import_react.default.createElement("header", null, /* @__PURE__ */ import_react.default.createElement("h1", null, "Jonathan")));
+    return /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "app"
+    }, /* @__PURE__ */ import_react2.default.createElement(Nav_default, null), /* @__PURE__ */ import_react2.default.createElement("header", null, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Jonathan Rubin")), /* @__PURE__ */ import_react2.default.createElement("main", null, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Senior Software Engineer @ Intuit"), /* @__PURE__ */ import_react2.default.createElement("p", null, "I created this app to familiarize myself with the ", /* @__PURE__ */ import_react2.default.createElement("a", {
+      href: "https://esbuild.github.io/",
+      target: "_blank"
+    }, /* @__PURE__ */ import_react2.default.createElement("strong", null, "esbuild")), " API. I will eventually add more details about myself and turn this into a portfolio, along with finish setting up the CSS-based theme-switcher")));
   };
   var App_default = App;
 
   // src/index.js
-  import_react_dom.default.render(/* @__PURE__ */ React2.createElement(App_default, null), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ React3.createElement(App_default, null), document.getElementById("root"));
 })();
 /*
 object-assign
