@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild app.js --bundle --outfile=out.js --loader:.js=jsx"
+    "build": "node ./build.js",
+    "path": "path-browserify"
   },
   "author": "",
   "license": "ISC",
