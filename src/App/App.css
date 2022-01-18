@@ -17,7 +17,8 @@ body {
     --gray-4: #595959;
     --gray-5: #484848;
     --gray-6: #373737;
-    --yellow: #fad672;
+    --yellow1: #ff8c00;
+    --yellow2: #fad672;
 }
 
 .light {
@@ -26,6 +27,7 @@ body {
     --bg-dropdown: var(--gray-1);
     --text: var(--gray-6);
     --border-color: var(--gray-6);
+    --yellow: var(--yellow1);
 }
 
 .dark {
@@ -34,6 +36,8 @@ body {
     --bg-dropdown: var(--gray-6);
     --text: var(--gray-1);
     --border-color: var(--gray-1);
+    --yellow: var(--yellow2);
+
 }
 
 ul.navbar-items {
