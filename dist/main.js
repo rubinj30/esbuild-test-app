@@ -20423,12 +20423,31 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var React3 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
-  // src/App.js
+  // src/App/App.js
   var import_react2 = __toESM(require_react());
 
   // src/Nav/Nav.js
   var import_react = __toESM(require_react());
   var Nav = () => {
+    const [theme, setTheme] = import_react.default.useState();
+    import_react.default.useEffect(() => {
+      const theme2 = localStorage.getItem("theme");
+      setTheme(theme2);
+      if (theme2 === "light") {
+        document.body.classList.replace("dark", "light");
+      }
+    }, []);
+    const toggleTheme = (selectedTheme) => {
+      if (selectedTheme === "light") {
+        localStorage.setItem("theme", "light");
+        document.body.classList.replace("dark", "light");
+        setTheme("light");
+      } else if (selectedTheme === "dark") {
+        localStorage.setItem("theme", "dark");
+        document.body.classList.replace("light", "dark");
+        setTheme("dark");
+      }
+    };
     return /* @__PURE__ */ import_react.default.createElement("nav", {
       className: "navbar"
     }, /* @__PURE__ */ import_react.default.createElement("ul", {
@@ -20444,12 +20463,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, "Theme"), /* @__PURE__ */ import_react.default.createElement("ul", {
       className: "dropdown"
     }, /* @__PURE__ */ import_react.default.createElement("li", {
-      className: "dropdown-item"
+      className: `dropdown-item ${theme === "dark" ? " selected" : ""}`,
+      onClick: () => toggleTheme("dark")
     }, /* @__PURE__ */ import_react.default.createElement("a", {
       id: "dark",
       href: "#"
     }, "dark")), /* @__PURE__ */ import_react.default.createElement("li", {
-      className: "dropdown-item"
+      className: `dropdown-item ${theme === "light" ? " selected" : ""}`,
+      onClick: () => toggleTheme("light")
     }, /* @__PURE__ */ import_react.default.createElement("a", {
       id: "light",
       href: "#"
@@ -20457,11 +20478,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var Nav_default = Nav;
 
-  // src/App.js
+  // src/App/App.js
   var App = () => {
     return /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "app"
     }, /* @__PURE__ */ import_react2.default.createElement(Nav_default, null), /* @__PURE__ */ import_react2.default.createElement("header", null, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Jonathan Rubin")), /* @__PURE__ */ import_react2.default.createElement("main", null, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Senior Software Engineer @ Intuit"), /* @__PURE__ */ import_react2.default.createElement("p", null, "I created this app to familiarize myself with the ", /* @__PURE__ */ import_react2.default.createElement("a", {
+      className: "esbuild-link",
       href: "https://esbuild.github.io/",
       target: "_blank"
     }, /* @__PURE__ */ import_react2.default.createElement("strong", null, "esbuild")), " API. I will eventually add more details about myself and turn this into a portfolio, along with finish setting up the CSS-based theme-switcher")));

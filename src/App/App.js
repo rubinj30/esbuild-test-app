@@ -11,7 +11,7 @@ const App = () => {
       </header>
       <main>
         <h2>Senior Software Engineer @ Intuit</h2>
-        <p>I created this app to familiarize myself with the <a href="https://esbuild.github.io/" target="_blank"><strong>esbuild</strong></a> API. I will eventually add more details about myself and turn this into a portfolio, along with finish setting up the CSS-based theme-switcher</p>
+        <p>I created this app to familiarize myself with the <a className='esbuild-link' href="https://esbuild.github.io/" target="_blank"><strong>esbuild</strong></a> API. I will eventually add more details about myself and turn this into a portfolio, along with finish setting up the CSS-based theme-switcher</p>
       </main>
     </div>
   );
