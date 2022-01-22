@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Nav.css";
 
 const Nav = () => {
 
-  const [theme, setTheme] = React.useState()
+  const [theme, setTheme] = useState()
 
-  React.useEffect(() => {
-    const theme = localStorage.getItem('theme');
-    setTheme(theme);
+  useEffect(() => {
+    // TODO:
+    // Detect browser theme and use if nothing has been previously selected
+    const previouslySelectedTheme = localStorage.getItem('theme');
+    setTheme(previouslySelectedTheme);
     
     // default theme is defined in the index.html via a "dark" class on the body tag
     // if the theme was last changed to "light", then update body's class accordingly
-    if (theme === 'light') {
-      document.body.classList.replace('dark', 'light');
-
+    if (previouslySelectedTheme === 'dark') {
+      document.body.classList.replace('light', 'dark');
     }
   }, [])
 
@@ -29,15 +30,15 @@ const Nav = () => {
     }
   };
 
-
-
   return (
     <nav className="navbar">
       <ul className="navbar-items">
-        <li className="navbar-item">Home</li>
-
-        <li className="navbar-item">Contact</li>
-
+      <li className="navbar-item">
+          <a href="#">Home</a>
+        </li>
+        <li className="navbar-item">
+          <a href="#">Contact</a>
+        </li>
         <li className="navbar-item has-dropdown">
           <a href="#">Theme</a>
           <ul className="dropdown">

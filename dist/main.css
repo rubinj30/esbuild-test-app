@@ -32,6 +32,11 @@ ul.navbar-items {
   text-decoration: none;
   color: var(--text);
   margin-left: 1rem;
+  cursor: pointer;
+}
+.navbar-item a:hover {
+  font-weight: bold;
+  text-decoration: underline;
 }
 .dropdown {
   position: absolute;
@@ -78,7 +83,6 @@ body {
   font-family: "Courier New", monospace;
   font-size: 16px;
   color: currentColor;
-  background-color: #fff;
   margin: 0;
   color: var(--text);
   background: var(--bg);
@@ -96,9 +100,8 @@ body {
   --yellow2: #fad672;
 }
 .light {
-  --bg: var(--gray-1);
-  --bg-nav: var(--gray-1);
-  --bg-dropdown: var(--gray-1);
+  --bg: var(--gray-0);
+  --bg-nav: var(--gray-0);
   --text: var(--gray-6);
   --border-color: var(--gray-6);
   --yellow: var(--yellow1);
@@ -106,7 +109,6 @@ body {
 .dark {
   --bg: var(--gray-6);
   --bg-nav: var(--gray-6);
-  --bg-dropdown: var(--gray-6);
   --text: var(--gray-1);
   --border-color: var(--gray-1);
   --yellow: var(--yellow2);
@@ -134,6 +136,8 @@ main {
 p .esbuild-link {
   text-decoration: none;
   color: var(--text);
+  font-weight: bold;
+  transition: font-weight 300ms ease-in-out, color 600ms ease-in-out;
 }
 p .esbuild-link:hover {
   text-decoration: underline;

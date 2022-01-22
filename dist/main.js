@@ -1044,7 +1044,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState(initialState) {
+          function useState2(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1056,7 +1056,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect(create, deps) {
+          function useEffect2(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1626,13 +1626,13 @@
           exports.useCallback = useCallback;
           exports.useContext = useContext;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect;
+          exports.useEffect = useEffect2;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect;
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
           exports.useRef = useRef;
-          exports.useState = useState;
+          exports.useState = useState2;
           exports.version = ReactVersion;
         })();
       }
@@ -20429,12 +20429,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/Nav/Nav.js
   var import_react = __toESM(require_react());
   var Nav = () => {
-    const [theme, setTheme] = import_react.default.useState();
-    import_react.default.useEffect(() => {
-      const theme2 = localStorage.getItem("theme");
-      setTheme(theme2);
-      if (theme2 === "light") {
-        document.body.classList.replace("dark", "light");
+    const [theme, setTheme] = (0, import_react.useState)();
+    (0, import_react.useEffect)(() => {
+      const previouslySelectedTheme = localStorage.getItem("theme");
+      setTheme(previouslySelectedTheme);
+      if (previouslySelectedTheme === "dark") {
+        document.body.classList.replace("light", "dark");
       }
     }, []);
     const toggleTheme = (selectedTheme) => {
@@ -20454,9 +20454,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "navbar-items"
     }, /* @__PURE__ */ import_react.default.createElement("li", {
       className: "navbar-item"
-    }, "Home"), /* @__PURE__ */ import_react.default.createElement("li", {
+    }, /* @__PURE__ */ import_react.default.createElement("a", {
+      href: "#"
+    }, "Home")), /* @__PURE__ */ import_react.default.createElement("li", {
       className: "navbar-item"
-    }, "Contact"), /* @__PURE__ */ import_react.default.createElement("li", {
+    }, /* @__PURE__ */ import_react.default.createElement("a", {
+      href: "#"
+    }, "Contact")), /* @__PURE__ */ import_react.default.createElement("li", {
       className: "navbar-item has-dropdown"
     }, /* @__PURE__ */ import_react.default.createElement("a", {
       href: "#"
@@ -20482,7 +20486,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var App = () => {
     return /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "app"
-    }, /* @__PURE__ */ import_react2.default.createElement(Nav_default, null), /* @__PURE__ */ import_react2.default.createElement("header", null, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Jonathan Rubin")), /* @__PURE__ */ import_react2.default.createElement("main", null, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Senior Software Engineer @ Intuit"), /* @__PURE__ */ import_react2.default.createElement("p", null, "I created this app to familiarize myself with the ", /* @__PURE__ */ import_react2.default.createElement("a", {
+    }, /* @__PURE__ */ import_react2.default.createElement(Nav_default, null), /* @__PURE__ */ import_react2.default.createElement("header", null, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Jonathan Rubin")), /* @__PURE__ */ import_react2.default.createElement("main", null, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Senior Software Engineer @ Mailchimp"), /* @__PURE__ */ import_react2.default.createElement("p", null, "I created this app to familiarize myself with the ", /* @__PURE__ */ import_react2.default.createElement("a", {
       className: "esbuild-link",
       href: "https://esbuild.github.io/",
       target: "_blank"
