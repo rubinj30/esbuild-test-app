@@ -2440,11 +2440,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React4 = require_react();
+          var React6 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2476,7 +2476,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React4) {
+          if (!React6) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3692,7 +3692,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React4.Children.forEach(children, function(child) {
+            React6.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3703,7 +3703,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React4.Children.forEach(props.children, function(child) {
+                React6.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10896,7 +10896,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React4.Component().refs;
+          var emptyRefsObject = new React6.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -20420,17 +20420,119 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // src/index.js
-  var React3 = __toESM(require_react());
+  var React5 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // src/App/App.js
-  var import_react2 = __toESM(require_react());
+  var import_react4 = __toESM(require_react());
 
   // src/Nav/Nav.js
+  var import_react3 = __toESM(require_react());
+
+  // src/externalLinks.js
+  var MAILCHIMP_SITE = "https://mailchimp.com/";
+  var LINKEDIN_PROFILE = "https://www.linkedin.com/in/jonathan-rubin/";
+  var GITHUB_PROFILE = "https://github.com/rubinj30";
+
+  // node_modules/react-icons/lib/esm/iconBase.js
+  var import_react2 = __toESM(require_react());
+
+  // node_modules/react-icons/lib/esm/iconContext.js
   var import_react = __toESM(require_react());
+  var DefaultContext = {
+    color: void 0,
+    size: void 0,
+    className: void 0,
+    style: void 0,
+    attr: void 0
+  };
+  var IconContext = import_react.default.createContext && import_react.default.createContext(DefaultContext);
+
+  // node_modules/react-icons/lib/esm/iconBase.js
+  var __assign = function() {
+    __assign = Object.assign || function(t) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s)
+          if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+      }
+      return t;
+    };
+    return __assign.apply(this, arguments);
+  };
+  var __rest = function(s, e) {
+    var t = {};
+    for (var p in s)
+      if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+          t[p[i]] = s[p[i]];
+      }
+    return t;
+  };
+  function Tree2Element(tree) {
+    return tree && tree.map(function(node, i) {
+      return import_react2.default.createElement(node.tag, __assign({
+        key: i
+      }, node.attr), Tree2Element(node.child));
+    });
+  }
+  function GenIcon(data) {
+    return function(props) {
+      return import_react2.default.createElement(IconBase, __assign({
+        attr: __assign({}, data.attr)
+      }, props), Tree2Element(data.child));
+    };
+  }
+  function IconBase(props) {
+    var elem = function(conf) {
+      var attr = props.attr, size = props.size, title = props.title, svgProps = __rest(props, ["attr", "size", "title"]);
+      var computedSize = size || conf.size || "1em";
+      var className;
+      if (conf.className)
+        className = conf.className;
+      if (props.className)
+        className = (className ? className + " " : "") + props.className;
+      return import_react2.default.createElement("svg", __assign({
+        stroke: "currentColor",
+        fill: "currentColor",
+        strokeWidth: "0"
+      }, conf.attr, attr, svgProps, {
+        className,
+        style: __assign(__assign({
+          color: props.color || conf.color
+        }, conf.style), props.style),
+        height: computedSize,
+        width: computedSize,
+        xmlns: "http://www.w3.org/2000/svg"
+      }), title && import_react2.default.createElement("title", null, title), props.children);
+    };
+    return IconContext !== void 0 ? import_react2.default.createElement(IconContext.Consumer, null, function(conf) {
+      return elem(conf);
+    }) : elem(DefaultContext);
+  }
+
+  // node_modules/react-icons/fa/index.esm.js
+  function FaGithubSquare(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z" } }] })(props);
+  }
+  function FaLinkedin(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 448 512" }, "child": [{ "tag": "path", "attr": { "d": "M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" } }] })(props);
+  }
+  function FaMoon(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z" } }] })(props);
+  }
+  function FaSun(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z" } }] })(props);
+  }
+
+  // src/Nav/Nav.js
   var Nav = () => {
-    const [theme, setTheme] = (0, import_react.useState)();
-    (0, import_react.useEffect)(() => {
+    const [theme, setTheme] = (0, import_react3.useState)();
+    (0, import_react3.useEffect)(() => {
       const previouslySelectedTheme = localStorage.getItem("theme");
       setTheme(previouslySelectedTheme);
       if (previouslySelectedTheme === "dark") {
@@ -20448,34 +20550,42 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         setTheme("dark");
       }
     };
-    return /* @__PURE__ */ import_react.default.createElement("nav", {
+    return /* @__PURE__ */ import_react3.default.createElement("nav", {
       className: "navbar"
-    }, /* @__PURE__ */ import_react.default.createElement("ul", {
+    }, /* @__PURE__ */ import_react3.default.createElement("ul", {
       className: "navbar-items"
-    }, /* @__PURE__ */ import_react.default.createElement("li", {
+    }, /* @__PURE__ */ import_react3.default.createElement("li", {
       className: "navbar-item"
-    }, /* @__PURE__ */ import_react.default.createElement("a", {
-      href: "#"
-    }, "Home")), /* @__PURE__ */ import_react.default.createElement("li", {
+    }, /* @__PURE__ */ import_react3.default.createElement("a", {
+      href: GITHUB_PROFILE
+    }, /* @__PURE__ */ import_react3.default.createElement(FaGithubSquare, {
+      size: "2rem"
+    }))), /* @__PURE__ */ import_react3.default.createElement("li", {
       className: "navbar-item"
-    }, /* @__PURE__ */ import_react.default.createElement("a", {
-      href: "#"
-    }, "Contact")), /* @__PURE__ */ import_react.default.createElement("li", {
+    }, /* @__PURE__ */ import_react3.default.createElement("a", {
+      href: LINKEDIN_PROFILE
+    }, /* @__PURE__ */ import_react3.default.createElement(FaLinkedin, {
+      size: "2rem"
+    }))), /* @__PURE__ */ import_react3.default.createElement("li", {
       className: "navbar-item has-dropdown"
-    }, /* @__PURE__ */ import_react.default.createElement("a", {
+    }, /* @__PURE__ */ import_react3.default.createElement("a", {
       href: "#"
-    }, "Theme"), /* @__PURE__ */ import_react.default.createElement("ul", {
+    }, theme === "light" ? /* @__PURE__ */ import_react3.default.createElement(FaSun, {
+      size: "2rem"
+    }) : /* @__PURE__ */ import_react3.default.createElement(FaMoon, {
+      size: "2rem"
+    })), /* @__PURE__ */ import_react3.default.createElement("ul", {
       className: "dropdown"
-    }, /* @__PURE__ */ import_react.default.createElement("li", {
+    }, /* @__PURE__ */ import_react3.default.createElement("li", {
       className: `dropdown-item ${theme === "dark" ? " selected" : ""}`,
       onClick: () => toggleTheme("dark")
-    }, /* @__PURE__ */ import_react.default.createElement("a", {
+    }, /* @__PURE__ */ import_react3.default.createElement("a", {
       id: "dark",
       href: "#"
-    }, "dark")), /* @__PURE__ */ import_react.default.createElement("li", {
+    }, "dark")), /* @__PURE__ */ import_react3.default.createElement("li", {
       className: `dropdown-item ${theme === "light" ? " selected" : ""}`,
       onClick: () => toggleTheme("light")
-    }, /* @__PURE__ */ import_react.default.createElement("a", {
+    }, /* @__PURE__ */ import_react3.default.createElement("a", {
       id: "light",
       href: "#"
     }, "light"))))));
@@ -20484,18 +20594,26 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/App/App.js
   var App = () => {
-    return /* @__PURE__ */ import_react2.default.createElement("div", {
+    return /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "app"
-    }, /* @__PURE__ */ import_react2.default.createElement(Nav_default, null), /* @__PURE__ */ import_react2.default.createElement("header", null, /* @__PURE__ */ import_react2.default.createElement("h1", null, "Jonathan Rubin")), /* @__PURE__ */ import_react2.default.createElement("main", null, /* @__PURE__ */ import_react2.default.createElement("h2", null, "Senior Software Engineer @ Mailchimp"), /* @__PURE__ */ import_react2.default.createElement("p", null, "I created this app to familiarize myself with the ", /* @__PURE__ */ import_react2.default.createElement("a", {
-      className: "esbuild-link",
+    }, /* @__PURE__ */ import_react4.default.createElement(Nav_default, null), /* @__PURE__ */ import_react4.default.createElement("header", null, /* @__PURE__ */ import_react4.default.createElement("h1", {
+      className: "name"
+    }, "Jonathan Rubin"), /* @__PURE__ */ import_react4.default.createElement("h2", null, "Senior Software Engineer @", " ", /* @__PURE__ */ import_react4.default.createElement("a", {
+      className: "undecorated-link ",
+      href: MAILCHIMP_SITE,
+      target: "_blank"
+    }, "Mailchimp"), " ")), /* @__PURE__ */ import_react4.default.createElement("main", null, /* @__PURE__ */ import_react4.default.createElement("p", {
+      className: "description"
+    }, "I created this app to familiarize myself with the", " ", /* @__PURE__ */ import_react4.default.createElement("a", {
+      className: "undecorated-link",
       href: "https://esbuild.github.io/",
       target: "_blank"
-    }, /* @__PURE__ */ import_react2.default.createElement("strong", null, "esbuild")), " API. I will eventually add more details about myself and turn this into a portfolio, along with finish setting up the CSS-based theme-switcher")));
+    }, /* @__PURE__ */ import_react4.default.createElement("strong", null, "esbuild")), " ", "API. I will eventually add more details about myself and turn this into a portfolio, along with finish setting up the theme-switcher.")));
   };
   var App_default = App;
 
   // src/index.js
-  import_react_dom.default.render(/* @__PURE__ */ React3.createElement(App_default, null), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ React5.createElement(App_default, null), document.getElementById("root"));
 })();
 /*
 object-assign

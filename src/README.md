@@ -12,3 +12,4 @@ I started creating a sample app with esbuild to familiarize myself with the API,
 - Think of good structure for different pages
 - Setup favicon
 - Add photo
+- ditch react-icons and handle assets with esbuild

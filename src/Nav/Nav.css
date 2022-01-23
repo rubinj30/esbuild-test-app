@@ -14,20 +14,25 @@ body {
     background: var(--bg-nav);
     color: var(--text);
     text-decoration: none;
+    width: 90%;
     transition: background 300ms ease-in-out, color 600ms ease-in-out;
 }
 
 ul.navbar-items {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     height: 100%;
+    padding-left: 0;
+    float: right;
+    width: 200px;
+    font-size: 26px !important;
 }
 
 .navbar-item, .dropdown-item {
     list-style-type: none; /* Remove bullets */
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
+    font-size: 20px;
 }
 
 .navbar-item a {

@@ -1,8 +1,8 @@
 body {
     font-family: 'Courier New', monospace;
-    font-size: 16px;
+    font-size: 1.2rem;
     color: currentColor;
-    margin: 0;
+    margin: 0 20px;
     color: var(--text);
     background: var(--bg);
     transition: background 300ms ease-in-out, color 600ms ease-in-out;
@@ -18,6 +18,7 @@ body {
     --gray-6: #373737;
     --yellow1: #ff8c00;
     --yellow2: #fad672;
+    --maxWidth: 800px;
 }
 
 .light {
@@ -47,28 +48,31 @@ ul.navbar-items {
 
 header {
     letter-spacing: 4px;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 15px;
     letter-spacing: 4px;
+    margin-top: 64px;
+    margin-bottom: 48px;
 }
 
 main {
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 15px;
 }
 
-p .esbuild-link {
+p.description {
+    line-height: 1.6;
+}
+
+.undecorated-link {
     text-decoration: none;
     color: var(--text);
     font-weight: bold;
     transition: font-weight 300ms ease-in-out, color 600ms ease-in-out;
-
 }
 
-p .esbuild-link:hover {
+.undecorated-link:hover  {
     text-decoration: underline;
     cursor: pointer;
 }

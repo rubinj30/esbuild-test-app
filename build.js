@@ -5,7 +5,8 @@ require('esbuild').build({
   bundle: true,
   outfile: 'dist/main.js',
   loader: {
-    '.js': 'jsx'
+    '.js': 'jsx',
+    '.png': 'file',
   },
   // plugins: [cssModulesPlugin()],
   // will want to remove for production builds
