@@ -1,5 +1,9 @@
 import React from "react";
+import { Link, Route, Routes } from "react-router-dom";
+
 import Nav from "../Nav/Nav";
+import Home from "../Home/Home";
+import About from "../About/About";
 import { MAILCHIMP_SITE } from "../externalLinks";
 import "./App.css";
 
@@ -11,26 +15,27 @@ const App = () => {
         <h1 className="name">Jonathan Rubin</h1>
         <h2>
           Senior Software Engineer @{" "}
-          <a className="undecorated-link " href={MAILCHIMP_SITE} target="_blank">
+          <a
+            className="undecorated-link "
+            href={MAILCHIMP_SITE}
+            target="_blank"
+          >
             Mailchimp
           </a>{" "}
         </h2>
       </header>
-      <main>
-        <p className="description">
-          I created this app to familiarize myself with the{" "}
-          <a
-            className="undecorated-link"
-            href="https://esbuild.github.io/"
-            target="_blank"
-          >
-            <strong>esbuild</strong>
-          </a>{" "}
-          API. I will eventually add more details about myself and turn this
-          into a portfolio, along with finish setting up the
-          theme-switcher.
-        </p>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
     </div>
   );
 };

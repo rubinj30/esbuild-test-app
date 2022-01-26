@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import { GITHUB_PROFILE, LINKEDIN_PROFILE } from "../externalLinks";
 import { FaLinkedin, FaGithubSquare, FaSun, FaMoon } from "react-icons/fa";
+import { BsFillMoonStarsFill } from "react-icons/bs";
 import "./Nav.css";
 
 const Nav = () => {
@@ -34,18 +37,27 @@ const Nav = () => {
   return (
     <nav className="navbar">
       <ul className="navbar-items">
+        <li className="navbar-item text">
+          <Link to="/about">About</Link>
+        </li>
         <li className="navbar-item">
           <a href={GITHUB_PROFILE}>
-            <FaGithubSquare size="2rem" />
+            <FaGithubSquare size="1.75rem" />
           </a>
         </li>
         <li className="navbar-item">
           <a href={LINKEDIN_PROFILE}>
-            <FaLinkedin size="2rem" />
+            <FaLinkedin size="1.75rem" />
           </a>
         </li>
         <li className="navbar-item has-dropdown">
-          <a href="#">{theme === "light" ? <FaSun size="2rem" /> : <FaMoon size="2rem" />}</a>
+          <a href="#">
+            {theme === "light" ? (
+              <FaSun size="1.75rem" />
+            ) : (
+              <BsFillMoonStarsFill size="1.75rem" />
+            )}
+          </a>
           <ul className="dropdown">
             {/* TODO: clean up, make into separate component to reduce duplicated text  */}
             <li

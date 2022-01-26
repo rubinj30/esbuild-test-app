@@ -1,6 +1,6 @@
 # Portfolio
 
-I started creating a sample app with esbuild to familiarize myself with the API, but then decided to use this site for a simple portfolio. 
+I started creating a sample app with [esbuild](https://esbuild.github.io/) to familiarize myself with the API, but then decided to use this site for a simple portfolio. 
 
 #### Todo/ideas:
 - deploy
@@ -13,3 +13,8 @@ I started creating a sample app with esbuild to familiarize myself with the API,
 - Setup favicon
 - Add photo
 - ditch react-icons and handle assets with esbuild
+
+Tech used:
+- [esbuild](https://esbuild.github.io/)
+- [React](https://reactjs.org/)
+- [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)

@@ -35,14 +35,21 @@ ul.navbar-items {
     font-size: 20px;
 }
 
+.navbar-item {
+    margin: 10px;
+}
+
+.navbar-item.text {
+    margin: 30px;
+}
+
 .navbar-item a {
     text-decoration: none;
     color: var(--text);
-    margin-left: 1rem;
     cursor: pointer;
 }
+
 .navbar-item a:hover {
-    font-weight: bold;
     text-decoration: underline;
 }
 
