@@ -25,16 +25,16 @@ const App = () => {
         </h2>
       </header>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route
+        {/* <Route
           path="*"
           element={
             <main style={{ padding: "1rem" }}>
-              <p>There's nothing here!</p>
+            <p>There's nothing here!</p>
             </main>
           }
-        />
+        /> */}
+        <Route path="*" element={<Home />} />
       </Routes>
     </div>
   );

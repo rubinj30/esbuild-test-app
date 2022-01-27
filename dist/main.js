@@ -2440,11 +2440,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React7 = require_react();
+          var React8 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React7.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2476,7 +2476,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React7) {
+          if (!React8) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3692,7 +3692,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React7.Children.forEach(children, function(child) {
+            React8.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3703,7 +3703,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React7.Children.forEach(props.children, function(child) {
+                React8.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10896,7 +10896,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React7.Component().refs;
+          var emptyRefsObject = new React8.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -20420,7 +20420,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // src/index.js
-  var React6 = __toESM(require_react());
+  var React7 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // node_modules/react-router-dom/index.js
@@ -21295,7 +21295,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }
 
   // src/App/App.js
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
 
   // src/Nav/Nav.js
   var import_react5 = __toESM(require_react());
@@ -21470,14 +21470,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var Nav_default = Nav;
 
   // src/Home/Home.js
+  var import_react6 = __toESM(require_react());
   function Home() {
-    return /* @__PURE__ */ React.createElement("p", {
+    return /* @__PURE__ */ import_react6.default.createElement("p", {
       className: "description"
-    }, "I created this app to familiarize myself with the", " ", /* @__PURE__ */ React.createElement("a", {
+    }, "I created this app to familiarize myself with the", " ", /* @__PURE__ */ import_react6.default.createElement("a", {
       className: "undecorated-link",
       href: "https://esbuild.github.io/",
       target: "_blank"
-    }, /* @__PURE__ */ React.createElement("strong", null, "esbuild")), " ", "API. I will eventually add more details about myself and turn this into a portfolio, along with finish setting up the theme-switcher.");
+    }, /* @__PURE__ */ import_react6.default.createElement("strong", null, "esbuild")), " ", "API. I will eventually add more details about myself and turn this into a portfolio, along with finish setting up the theme-switcher.");
   }
 
   // src/About/About.js
@@ -21487,31 +21488,26 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/App/App.js
   var App = () => {
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "app"
-    }, /* @__PURE__ */ import_react6.default.createElement(Nav_default, null), /* @__PURE__ */ import_react6.default.createElement("header", null, /* @__PURE__ */ import_react6.default.createElement("h1", {
+    }, /* @__PURE__ */ import_react7.default.createElement(Nav_default, null), /* @__PURE__ */ import_react7.default.createElement("header", null, /* @__PURE__ */ import_react7.default.createElement("h1", {
       className: "name"
-    }, "Jonathan Rubin"), /* @__PURE__ */ import_react6.default.createElement("h2", null, "Senior Software Engineer @", " ", /* @__PURE__ */ import_react6.default.createElement("a", {
+    }, "Jonathan Rubin"), /* @__PURE__ */ import_react7.default.createElement("h2", null, "Senior Software Engineer @", " ", /* @__PURE__ */ import_react7.default.createElement("a", {
       className: "undecorated-link ",
       href: MAILCHIMP_SITE,
       target: "_blank"
-    }, "Mailchimp"), " ")), /* @__PURE__ */ import_react6.default.createElement(Routes, null, /* @__PURE__ */ import_react6.default.createElement(Route, {
-      path: "/",
-      element: /* @__PURE__ */ import_react6.default.createElement(Home, null)
-    }), /* @__PURE__ */ import_react6.default.createElement(Route, {
+    }, "Mailchimp"), " ")), /* @__PURE__ */ import_react7.default.createElement(Routes, null, /* @__PURE__ */ import_react7.default.createElement(Route, {
       path: "about",
-      element: /* @__PURE__ */ import_react6.default.createElement(About, null)
-    }), /* @__PURE__ */ import_react6.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react7.default.createElement(About, null)
+    }), /* @__PURE__ */ import_react7.default.createElement(Route, {
       path: "*",
-      element: /* @__PURE__ */ import_react6.default.createElement("main", {
-        style: { padding: "1rem" }
-      }, /* @__PURE__ */ import_react6.default.createElement("p", null, "There's nothing here!"))
+      element: /* @__PURE__ */ import_react7.default.createElement(Home, null)
     })));
   };
   var App_default = App;
 
   // src/index.js
-  import_react_dom.default.render(/* @__PURE__ */ React6.createElement(BrowserRouter, null, /* @__PURE__ */ React6.createElement(App_default, null)), document.getElementById("root"));
+  import_react_dom.default.render(/* @__PURE__ */ React7.createElement(BrowserRouter, null, /* @__PURE__ */ React7.createElement(App_default, null)), document.getElementById("root"));
 })();
 /*
 object-assign
